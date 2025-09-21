@@ -571,16 +571,48 @@ function ProjectCard({ project, index }) {
       <div className="group project-card rounded-2xl overflow-hidden">
         {/* Image section */}
         <div className="relative overflow-hidden">
-          <motion.img
-            src={project.link}
-            alt={project.title}
-            className="w-full h-48 sm:h-52 lg:h-56 object-cover"
-            initial={{ scale: 1.1 }}
-            whileHover={{ scale: 1.15 }}
-            animate={isInView ? { scale: 1 } : { scale: 1.1 }}
-            transition={{ duration: 0.8 }}
-            loading="lazy"
-          />
+          <motion.div
+            className="relative overflow-hidden rounded-2xl"
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.3 }}
+          >
+            <picture>
+              {/* Modern WebP first */}
+              <source
+                srcSet={`
+        ${project.link}?w=400 400w,
+        ${project.link}?w=800 800w,
+        ${project.link}?w=1200 1200w
+      `}
+                type="image/webp"
+              />
+              {/* Fallback JPEG/PNG */}
+              <source
+                srcSet={`
+        ${project.link}?w=400 400w,
+        ${project.link}?w=800 800w,
+        ${project.link}?w=1200 1200w
+      `}
+                type="image/jpeg"
+              />
+              {/* Motion-enabled img */}
+              <motion.img
+                src={`${project.link}?w=800`}
+                alt={project.title}
+                loading="lazy"
+                decoding="async"
+                width="800"
+                height="450"
+                className="w-full h-48 sm:h-52 lg:h-56 object-cover"
+                sizes="(max-width: 640px) 100vw,
+             (max-width: 1024px) 50vw,
+             33vw"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              />
+            </picture>
+          </motion.div>
+
 
           {/* Enhanced gradient overlay */}
           <div className="absolute inset-0 image-overlay"></div>
@@ -688,7 +720,7 @@ function ProjectCard({ project, index }) {
             {project.title}
           </motion.h3>
 
-          <p className="text-sm sm:text-base text-gray-300 leading-relaxed mb-5 line-clamp-4 group-hover:text-gray-200 transition-colors duration-300">
+          <p className="text-sm sm:text-base text-gray-300 leading-relaxed mb-5 line-clamp-4 group-hover:text-gray-200 transition-colors duration-300" title={project.description}>
             {project.description}
           </p>
 
