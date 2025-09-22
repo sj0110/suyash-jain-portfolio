@@ -37,7 +37,7 @@ const EducationSection = () => {
       school: "St. Paul's School, Morar, Gwalior, MP",
       mascot: "📕",
       year: "2012 - 2018",
-      achievements: ["Percentage: 91.0%", "Subject: All Subjects"],
+      achievements: ["Percentage: 95.6%", "Subject: All Subjects"],
       skills: ["Physics", "Chemistry", "Mathematics", "Biology", "Hindi", "English", "Social Studies"],
       description:
         "Well-rounded foundational education fostering curiosity and critical thinking across diverse subjects. Built strong communication skills, scientific temperament, and cultural awareness that shaped personal and academic growth.",

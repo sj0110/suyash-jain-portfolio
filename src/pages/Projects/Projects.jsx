@@ -83,7 +83,7 @@ const projects = [
     color: "#D6E8FE",
     category: "Enterprise Platform",
     tech: ["NextJS", "ExpressJS", "MongoDB", "GitHub Actions", "CI/CD", "Google Cloud"],
-    githubLink: "https://github.com/seraprogrammer/portfolio",
+    githubLink: "https://github.com/sj0110/service-booking-mgmt",
     liveLink: "https://www.figma.com/design/WkSYtUgW9lSYLdXoPxMIOj/FSM-Mini-Project?node-id=0-1&t=BEjYNcOYGRFWhBm6-1",
     featured: true
   },
@@ -125,8 +125,8 @@ const projects = [
     color: "#FF9800",
     category: "Marketing Tool",
     tech: ["JavaScript", "URL Processing"],
-    githubLink: "https://github.com/sj0110/Spotify-Music-Player",
-    liveLink: "https://converter-github-io-orpin.vercel.app"
+    githubLink: "https://github.com/sj0110/UTM-Tracker-URL-Builder",
+    liveLink: "https://sj0110.github.io/UTM-Tracker-URL-Builder"
   },
   {
     title: "Spotifi – Responsive Music Player",
